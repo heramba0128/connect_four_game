@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Connect Four</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Connect Four</h1>
+        <div id="name-form">
+            <h3>Enter Player's Name</h3>
+            <label for="player1-name">Player 1 (Red):</label>
+            <input type="text" id="player1-name" placeholder="Enter Player 1 name">
+            <br><br>
+            <label for="player2-name">Player 2 (Yellow):</label>
+            <input type="text" id="player2-name" placeholder="Enter Player 2 name">
+            <br><br>
+            <button id="start-game">Start Game</button>
+        </div>
+        <div id="game-board" style="display: none;">
+            <div id="message"></div>
+            <div id="board"></div>
+            <button id="restart">Restart Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

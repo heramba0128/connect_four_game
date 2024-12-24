@@ -1,0 +1,147 @@
+:root {
+    --pastel-blue: #a7c7e7;
+    --pastel-red: #ff9999;
+    --pastel-yellow: #fff5b1;
+    --pastel-green: #a2d9b1;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-light: rgba(255, 255, 255, 0.2);
+    --soft-white: #f8f9f5; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--soft-white);
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--pastel-blue);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--pastel-blue);
+    margin-bottom: 20px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 15px;
+    justify-content: center;
+    margin: 0 auto 20px;
+    perspective: 1000px;
+    transform: rotateX(20deg);
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, var(--pastel-blue), var(--pastel-green));
+    border-radius: 50%;
+    box-shadow: 0 10px 15px var(--shadow-dark), 0 -5px 8px var(--shadow-light) inset;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 20px var(--shadow-dark);
+    cursor: pointer;
+}
+
+.red, .yellow {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    animation: drop 0.5s ease;
+    box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.red {
+    background: radial-gradient(circle, var(--pastel-red), #ff7f7f);
+}
+
+.yellow {
+    background: radial-gradient(circle, var(--pastel-yellow), #ffd700);
+}
+
+@keyframes drop {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.red-circle, .yellow-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.red-circle { background-color: var(--pastel-red); }
+.yellow-circle { background-color: var(--pastel-yellow); }
+
+button {
+    padding: 10px 30px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#restart {
+    background-color: var(--pastel-red);
+    margin-top: 15px;
+    box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+#restart:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 8px 15px var(--shadow-dark);
+}
+
+#name-form {
+    margin-bottom: 20px;
+}
+
+#name-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#name-form button {
+    background-color: var(--pastel-green);
+    margin-top: 15px;
+}
+
+#name-form button:hover {
+    background-color: #27ae60;
+}
+
+#game-board {
+    text-align: center;
+}
